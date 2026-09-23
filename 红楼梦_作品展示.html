@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="847ddSj52e5VPAdzx65SzK">
+<head data-page-node-id="xhQ7CT8bumTqiFvuxFUJG0">
+<meta charset="utf-8" data-page-node-id="BetB3sc2xYt9CB6CHshOWH">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="SKufMBPKMwNbIfWGwwXGfH">
+<title>《红楼梦》一分钟短片 · 作品展示</title>
+<meta name="description" content="一分钟读懂《红楼梦》：国风动画短片作品展示页——八段脚本、三十帧国画分镜、古风配乐与完整成片。" data-page-node-id="W7ZE7iZ8RTVEpc6aSUuvRF">
+<style>
+  :root{
+    --paper:#f5efe0;
+    --paper2:#fbf6e9;
+    --ink:#2f2013;
+    --ink2:#6b5b45;
+    --red:#9e2f24;
+    --red2:#b8452f;
+    --gold:#a9852e;
+    --gold2:#b8860b;
+    --green:#4a6b57;
+    --line:#d8c9a8;
+    --sub-bg:#241708;
+    --sub-tx:#f2e3c2;
+    --disp:"STXingkai","华文行楷","KaiTi","楷体",serif;
+    --body:"KaiTi","楷体","STKaiti","Noto Serif SC",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    font-size:16.5px;
+    line-height:1.8;
+    background:
+      radial-gradient(1100px 480px at 88% -6%, rgba(169,133,46,.10), transparent 60%),
+      radial-gradient(900px 460px at -8% 32%, rgba(74,107,87,.08), transparent 60%),
+      var(--paper);
+  }
+  /* 宣纸颗粒 */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='linear' slope='0.05'/></feComponentTransfer></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+  }
+  header.nav, main, footer{position:relative;z-index:1}
+
+  /* ===== 顶部导航 ===== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,239,224,.9);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{max-width:1120px;margin:auto;display:flex;align-items:center;gap:30px;height:56px;padding:0 4vw}
+  .brand{font-family:var(--disp);font-size:21px;color:var(--red);letter-spacing:2px;white-space:nowrap}
+  .nav-in nav{display:flex;gap:24px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto}
+  .nav-in nav::-webkit-scrollbar{display:none}
+  .nav-in nav a{color:var(--ink2);text-decoration:none;font-size:15px;white-space:nowrap;padding:4px 2px;border-bottom:2px solid transparent;transition:.2s}
+  .nav-in nav a:hover{color:var(--red)}
+  .nav-in nav a.active{color:var(--red);border-bottom-color:var(--red)}
+  .pbar{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--red),var(--gold2))}
+
+  /* ===== 通用 ===== */
+  .wrap{max-width:1120px;margin:auto;padding:0 4vw}
+  section{padding:66px 0;scroll-margin-top:76px}
+  .shead{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+  .shead h2{font-family:var(--disp);font-weight:400;font-size:clamp(26px,3.4vw,36px);letter-spacing:3px}
+  .srule{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .skicker{color:var(--red);font-size:13px;letter-spacing:4px;margin-bottom:2px;display:block}
+  .sdesc{color:var(--ink2);font-size:15px;max-width:760px;margin-bottom:30px}
+
+  .seal{
+    display:inline-grid;place-items:center;flex:none;
+    width:44px;height:44px;border-radius:9px;color:#f7ead0;
+    font-family:var(--disp);font-size:24px;line-height:1;
+    background:linear-gradient(135deg,var(--red2),#7d241b);
+    box-shadow:0 4px 12px rgba(158,47,36,.35);
+    transform:rotate(-2deg);
+  }
+  .seal.sm{width:34px;height:34px;font-size:19px;border-radius:7px}
+
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1px solid var(--line);border-radius:999px;
+    padding:5px 14px;font-size:13px;color:var(--ink2);
+    background:rgba(255,253,246,.55);
+  }
+  .chip b{color:var(--red);font-weight:400}
+
+  /* 入场动画 */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== 首屏 ===== */
+  .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center;padding:74px 0 60px;position:relative}
+  .hero .kicker{color:var(--red);letter-spacing:6px;font-size:14px;display:block;margin-bottom:14px}
+  .hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(46px,7vw,80px);letter-spacing:6px;line-height:1.15}
+  .hero h1 small{display:block;font-size:clamp(17px,2vw,22px);letter-spacing:8px;color:var(--ink2);margin-top:10px}
+  .hero .quote{margin:22px 0 26px;color:var(--ink2);font-size:17px;letter-spacing:2px}
+  .hero .quote em{font-style:normal;color:var(--gold2)}
+  .hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .hero .intro{color:var(--ink2);font-size:16px;max-width:52ch}
+  .side-poem{
+    position:absolute;left:-8px;top:50%;transform:translateY(-50%);
+    writing-mode:vertical-rl;font-family:var(--disp);font-size:21px;
+    letter-spacing:12px;color:rgba(47,32,19,.16);pointer-events:none;user-select:none;
+    display:flex;gap:18px;
+  }
+  .phone{
+    width:min(320px,82vw);margin:auto;
+    background:var(--sub-bg);border:1px solid #3c2b15;border-radius:24px;padding:11px;
+    box-shadow:0 30px 70px rgba(47,32,19,.30),0 6px 16px rgba(47,32,19,.18);
+    position:relative;
+  }
+  .phone::after{ /* 印章 */
+    content:"雪芹";position:absolute;right:-16px;top:-16px;
+    writing-mode:vertical-rl;display:grid;place-items:center;
+    width:38px;height:62px;border-radius:7px;transform:rotate(3deg);
+    background:linear-gradient(135deg,var(--red2),#7d241b);color:#f7ead0;
+    font-family:var(--disp);font-size:17px;letter-spacing:3px;
+    box-shadow:0 4px 10px rgba(158,47,36,.4);
+  }
+  .phone video{display:block;width:100%;aspect-ratio:9/16;border-radius:15px;background:#000}
+  .phone .cap{text-align:center;color:#c9b78d;font-size:12.5px;padding:10px 4px 2px;letter-spacing:2px}
+
+  /* ===== 配乐 ===== */
+  .music-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .inst-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 24px}
+  .music-card{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .music-card .lab{font-size:13px;color:var(--ink2);letter-spacing:3px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+  .music-card audio{width:100%}
+  .arc-card{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:20px 20px 10px}
+  .arc-card svg{width:100%;height:auto;display:block}
+  .arc-title{font-family:var(--disp);font-size:18px;letter-spacing:2px;margin-bottom:2px}
+
+  /* ===== 脚本与分段视频 ===== */
+  .rhythm{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:30px;color:var(--ink2);font-size:14px}
+  .rhythm .chip{font-size:13px}
+  .rhythm .arr{color:var(--gold2)}
+  .seg-card{
+    display:grid;grid-template-columns:232px 1fr;gap:26px;
+    background:var(--paper2);border:1px solid var(--line);border-radius:16px;
+    padding:24px;margin-bottom:26px;
+    box-shadow:0 10px 26px rgba(47,32,19,.06);
+  }
+  .seg-card video{display:block;width:100%;aspect-ratio:9/16;border-radius:12px;background:#000;border:1px solid var(--line)}
+  .seg-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+  .seg-head h3{font-family:var(--disp);font-weight:400;font-size:24px;letter-spacing:2px}
+  .seg-body .lab{font-size:12.5px;color:var(--red);letter-spacing:3px;margin:14px 0 6px}
+  .seg-body p.shot{color:var(--ink);font-size:16px;text-align:justify}
+  .substrip{
+    margin-top:10px;background:var(--sub-bg);border-radius:12px;padding:14px 18px;
+    box-shadow:inset 0 0 0 1px rgba(242,227,194,.08);
+  }
+  .substrip p{
+    font-family:var(--disp);color:var(--sub-tx);font-size:18px;letter-spacing:1.5px;
+    line-height:1.85;text-align:center;
+  }
+  .substrip p span{position:relative;padding:0 14px}
+  .substrip p span+span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:.9em;background:rgba(242,227,194,.28)}
+
+  /* ===== 画卷（图片素材） ===== */
+  .vol-head{display:flex;align-items:center;gap:12px;margin:34px 0 12px}
+  .vol-head h3{font-family:var(--disp);font-weight:400;font-size:21px;letter-spacing:2px}
+  .vol-head .cnt{color:var(--ink2);font-size:13px}
+  .vol-head .vrule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .scroller{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x proximity}
+  .scroller::-webkit-scrollbar{height:8px}
+  .scroller::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+  .scroller::-webkit-scrollbar-track{background:transparent}
+  .gal-item{
+    flex:0 0 188px;scroll-snap-align:start;cursor:zoom-in;
+    background:#fffdf6;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .gal-item:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(47,32,19,.16);border-color:rgba(158,47,36,.5)}
+  .gal-item img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#eee4cd}
+  .gal-item figcaption{padding:10px 12px 12px}
+  .gal-item figcaption b{display:block;font-weight:400;font-size:14.5px;letter-spacing:1px}
+  .gal-item figcaption span{display:block;font-size:12px;color:var(--ink2);line-height:1.55;margin-top:3px}
+  .gal-hint{color:var(--ink2);font-size:13px;margin-top:-16px;margin-bottom:6px}
+
+  /* ===== 制作说明 ===== */
+  .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:34px}
+  .step{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+  .step .n{font-family:var(--disp);color:var(--red);font-size:15px;letter-spacing:2px;display:block;margin-bottom:6px}
+  .step b{display:block;font-weight:400;font-size:16px;margin-bottom:4px}
+  .step span{font-size:12.5px;color:var(--ink2);line-height:1.6;display:block}
+  .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:40px}
+  .spec .card{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .spec .card i{font-style:normal;font-size:12.5px;color:var(--red);letter-spacing:3px;display:block;margin-bottom:6px}
+  .spec .card b{font-weight:400;font-size:16.5px;display:block;line-height:1.6}
+  .spec .card span{font-size:13px;color:var(--ink2);display:block;margin-top:4px;line-height:1.7}
+  .files{background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .files h3{font-family:var(--disp);font-weight:400;font-size:20px;letter-spacing:2px;margin-bottom:12px}
+  .files ul{list-style:none;columns:2;column-gap:44px}
+  .files li{font-size:14px;color:var(--ink2);padding:5px 0;border-bottom:1px dashed rgba(216,201,168,.6);break-inside:avoid}
+  .files li code{font-family:var(--body);color:var(--ink);background:rgba(169,133,46,.12);padding:1px 7px;border-radius:5px;font-size:13.5px}
+
+  /* ===== 页脚 ===== */
+  footer{background:var(--sub-bg);color:#b7a37e;margin-top:30px}
+  footer .poems{font-family:var(--disp);color:#e9d9b6;font-size:21px;letter-spacing:4px;text-align:center;padding:40px 4vw 6px}
+  footer .poems i{font-style:normal;color:#7d6844;padding:0 16px}
+  footer .cred{text-align:center;font-size:13px;padding:14px 4vw 36px;letter-spacing:1px}
+
+  /* ===== 灯箱 ===== */
+  #lightbox{
+    position:fixed;inset:0;z-index:99;display:none;
+    background:rgba(22,14,6,.93);
+    align-items:center;justify-content:center;flex-direction:column;padding:24px;
+  }
+  #lightbox.open{display:flex}
+  #lbImg{max-height:74vh;max-width:min(520px,88vw);border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.55);background:#000}
+  #lbCap{color:#e9d9b6;margin-top:16px;font-family:var(--disp);font-size:21px;letter-spacing:2px;text-align:center}
+  #lbSub{color:#b7a37e;font-size:14px;margin-top:5px;text-align:center;max-width:70ch;line-height:1.7}
+  .lb-btn{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:46px;height:46px;border-radius:50%;cursor:pointer;
+    border:1px solid rgba(233,217,182,.4);background:rgba(0,0,0,.28);
+    color:#e9d9b6;font-size:20px;font-family:var(--body);transition:.2s;
+  }
+  .lb-btn:hover{background:rgba(158,47,36,.55)}
+  #lbPrev{left:4vw}#lbNext{right:4vw}
+  #lbClose{position:absolute;top:18px;right:22px;top:18px;width:42px;height:42px;transform:none;font-size:16px;letter-spacing:2px}
+
+  /* ===== 响应式 ===== */
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr;gap:40px;padding-top:52px}
+    .side-poem{display:none}
+    .phone{margin:0 auto}
+    .music-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .files ul{columns:1}
+  }
+  @media (max-width:760px){
+    .seg-card{grid-template-columns:1fr}
+    .seg-card .vid{max-width:280px;margin:auto}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .substrip p{font-size:16px}
+  }
+</style>
+</head>
+<body data-page-node-id="adZjuyq198IanDdDB8vXka">
+
+<header class="nav" data-page-node-id="K7gSJaskBY8E2tBTjhlNzz">
+  <div class="nav-in" data-page-node-id="s4Izq65QzlTQ3UrQOAB20A">
+    <div class="brand" data-page-node-id="wZnNFd23l3iqqfP3c2Hw3d">红楼梦 · 作品展示</div>
+    <nav id="navlinks" data-page-node-id="hKBNialyTS1B4F2DgEuJKd">
+      <a href="#film" data-page-node-id="yfqjevcRVMmXIFs321NBED">成片</a>
+      <a href="#music" data-page-node-id="TuVmJpV1E038TNL5D7dSoM">配乐</a>
+      <a href="#script" data-page-node-id="495qivchAouoMZOzfv9P29">脚本</a>
+      <a href="#gallery" data-page-node-id="MqCC4aa6ybdAoWXY8CzU6j">画卷</a>
+      <a href="#about" data-page-node-id="NLoyHL38UPexZ47l54abDS">制作</a>
+    </nav>
+    <div class="pbar" id="pbar" data-page-node-id="lMQ1PkDu5VtdutZKZVBaC4"></div>
+  </div>
+</header>
+
+<main data-page-node-id="N3U8GoWpzhK4KNamkc9UaB">
+
+  <!-- ============ 首屏 + 成片 ============ -->
+  <section id="film" style="padding-bottom:30px" data-page-node-id="eG3ZjuVfXq1YwggEq5zChF">
+    <div class="wrap hero" data-page-node-id="58a8aVl5mHqT7BnFKrVxOf">
+      <div class="side-poem" aria-hidden="true" data-page-node-id="fQBkfpMEjwETK7AzpaT4qL"><span data-page-node-id="CbBz5YfdDe0kiAlj3NrMXZ">满纸荒唐言</span><span data-page-node-id="xHlJr4wCnZl67Q2ggV8OLf">一把辛酸泪</span></div>
+      <div data-page-node-id="UU3pVr8bvnkQ9a4ASHQdAB">
+        <span class="kicker" data-page-node-id="nSKyTYut8eJOUcZoKToDRo">一分钟读名著 · 国风动画短片</span>
+        <h1 data-page-node-id="yrxXGngFJaoabxjFl6jbk9">《红楼梦》<small data-page-node-id="fg6zD2csD3rmk3M6C1uhfG">一分钟，走进一场旧梦</small></h1>
+        <p class="quote" data-page-node-id="kpOIYnDAPoP2iN75qXeyB6">「都云作者痴，<em data-page-node-id="bA8DPynCAU7hhdE7EjL0mA">谁解其中味</em>。」</p>
+        <div class="chips" data-page-node-id="TndLFfZ6oL32BlR9GZmlJ7">
+          <span class="chip" data-page-node-id="F7d5LNRAVELS7reSI2TXHC">总时长 <b data-page-node-id="BqVmpjlhIIeCzS8gnnsFJ1">59.5″</b></span>
+          <span class="chip" data-page-node-id="mFxJeTDcjAXVnRCM94KQ3h"><b data-page-node-id="NrhSk7m42pNxziyAc1u0OR">8</b> 段框架</span>
+          <span class="chip" data-page-node-id="kN9MHCgfWiMjR2KUmCE9Ou"><b data-page-node-id="TFa7fW1QCDbFFZehhXfscY">30</b> 帧国画分镜</span>
+          <span class="chip" data-page-node-id="g5G4XF33EsGGJ3hhDivQ84">480×864 · 9:16</span>
+          <span class="chip" data-page-node-id="dZWb0DF2hKfHLljlcsFCN6">24 fps</span>
+          <span class="chip" data-page-node-id="lHT9Cos9Iaf4pidCCC3CRG">工笔重彩 · 古风配乐</span>
+        </div>
+        <p class="intro" data-page-node-id="LlrIjpStmHl8AE8DLNmXBV">
+          不做剧情复述，而以八段骨架拆解一部传世名著：作者与时代、人物、剧情梗概、文学价值、主旨内核、艺术手法、版本与红学、当代阅读。
+          画面取传统国画工笔重彩之形，参考《韩熙载夜宴图》的屏风分段式构图，人物造型致敬 87 版电视剧；配乐以纯代码合成的古琴、箫、琵琶、鼓与编钟，随八段情绪起伏而变化。
+        </p>
+      </div>
+      <div class="phone" data-page-node-id="sWFs0aDAbBkA25oy85avTv">
+        <video controls preload="metadata" poster="seg02_03_黛玉葬花.png" playsinline data-page-node-id="5AELLyqDxpDyF94dsihO8d">
+          <source src="视频素材/红楼梦_完整版_配乐版.mp4" type="video/mp4" data-page-node-id="fQUj4aDajsATTb0GYOCKwx">
+          您的浏览器不支持视频播放。
+        </video>
+        <div class="cap" data-page-node-id="33ICJVp9O2Ks8hO987ZdAb">红楼梦 · 一分钟完整成片（含古风配乐）</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 配乐 ============ -->
+  <section id="music" data-page-node-id="eLsdcBwJZNNTucVIMRIFP7">
+    <div class="wrap" data-page-node-id="y18x1U6A7NG0sKZFYxQkqG">
+      <span class="skicker" data-page-node-id="jaCpzVKmvrjxi2tsArSv3V">MUSIC · 古风配乐</span>
+      <div class="shead" data-page-node-id="hzjf9JcriQ7ecaG9448KWb"><span class="seal sm" data-page-node-id="BNI0fFLckwqWJreHA2AZrn">乐</span><h2 data-page-node-id="YlQmDjNypGlmsYlNEpw01X">一段会呼吸的配乐</h2><div class="srule" data-page-node-id="sqNf4EyLEFuLshILZJOcwf"></div></div>
+      <p class="sdesc" data-page-node-id="08Q3SeXNl53EgOO8wk6343">
+        配乐不依赖任何现成音源，由代码逐音合成——古琴的拨弦与泛音、箫的气声缓起、琵琶的轮指、鼓的瞬态、编钟的长尾，再铺一层风声与混响。
+        八段各按画面情绪谱写，段与段之间交叉淡化衔接，全片是一条完整的音轨，没有硬切。
+      </p>
+      <div class="music-grid" data-page-node-id="Dl9hnkF37CwIgoiW4ePxwp">
+        <div class="reveal" data-page-node-id="k4TR3hgMbNSmRj38LJvPTo">
+          <div class="music-card" data-page-node-id="xPBSLHfg8P0FpmkqfszX1B">
+            <div class="lab" data-page-node-id="hvh35812yPExAbxzkO2gNd"><span data-page-node-id="bHLj4MHoagIPIp138pZQ2E">红楼梦_配乐.wav · 59.5″ · 立体声 44.1kHz</span></div>
+            <audio controls preload="metadata" src="视频素材/红楼梦_配乐.wav" data-page-node-id="ThhyqItHJnP3M03HjvCDc3"></audio>
+          </div>
+          <div class="inst-row" data-page-node-id="sZm39YJ2QaTiXRbaGmH9GF">
+            <span class="chip" data-page-node-id="WfYPcCMyhdJWZiR4O1HsBm">古琴</span><span class="chip" data-page-node-id="I1XX2aPGWZ66GpcJPH3dMG">箫</span><span class="chip" data-page-node-id="8wadOR2QoBjfYHA9L7Ekzo">琵琶</span>
+            <span class="chip" data-page-node-id="fc1jNQeCHUOrgyclFYtmXA">鼓</span><span class="chip" data-page-node-id="8UKmWKtGkEgsiEGqW9FiRh">编钟</span><span class="chip" data-page-node-id="3mrZdGDr9BAytMlPBJE6mu">风声</span><span class="chip" data-page-node-id="Il5QznBYgnJOjVtCEkSpPP">混响</span>
+          </div>
+          <p class="sdesc" style="margin-bottom:0" data-page-node-id="7Nq5IVb9qbJ3NPt6y8aqHp">
+            D 宫五声音阶为骨，情绪线随脚本走：孤寂起手，渐入流光；第三段推向全片最高点（盛衰顶点），第六段刻意收紧成留白（谐音机趣之轻），末段回望升华，淡出收束。
+          </p>
+        </div>
+        <div class="arc-card reveal" data-page-node-id="C6iUZbNqPos64lzunWpUjn">
+          <div class="arc-title" data-page-node-id="kRfDllbkh2aPG0ItOyDtO6">配乐逐段强度 · 情绪弧线</div>
+          <svg viewBox="0 0 680 250" role="img" aria-label="八段配乐情绪强度曲线" data-page-node-id="uBCxtbJ0ihAlxRtPH5pCoj">
+            <defs data-page-node-id="eMgmbv632QmUaDWydIDFG6">
+              <linearGradient id="agrad" x1="0" y1="0" x2="0" y2="1" data-page-node-id="1VpjmBs1kY1Xa93CqPHySQ">
+                <stop offset="0" stop-color="#9e2f24" stop-opacity=".26" data-page-node-id="EqRSEBgBhZtmFga3mITJJx"/>
+                <stop offset="1" stop-color="#9e2f24" stop-opacity="0" data-page-node-id="0QyuolBagDuyotsFNzcfIP"/>
+              </linearGradient>
+            </defs>
+            <text x="50" y="24" font-size="12" fill="#6b5b45" font-family="KaiTi,serif" data-page-node-id="Z5w2aetBvqsY6dAGupDdaq">纵轴：音量强度（逐段 RMS）　横轴：全片时间</text>
+            <!-- 段落分界 -->
+            <g stroke="#6b5b45" stroke-opacity=".18" stroke-dasharray="3 4" data-page-node-id="5qUwfvDxeoA4HnofqsByEt">
+              <line x1="115" y1="52" x2="115" y2="182" data-page-node-id="iGk2WwrVdNTuNIIXkIb2Nx"/><line x1="207" y1="52" x2="207" y2="182" data-page-node-id="od2WuU9NDmMrFIHNdgCf1c"/>
+              <line x1="308" y1="52" x2="308" y2="182" data-page-node-id="hkTbOqverMWn5mMWGMtxJp"/><line x1="369" y1="52" x2="369" y2="182" data-page-node-id="LMIc845C8cHORDes7l4QWV"/>
+              <line x1="431" y1="52" x2="431" y2="182" data-page-node-id="hCRZ5usY4C3acAty4HJzJj"/><line x1="502" y1="52" x2="502" y2="182" data-page-node-id="buFi8ta3BUQF02qcHWGjpT"/>
+              <line x1="563" y1="52" x2="563" y2="182" data-page-node-id="lNx2ghhtxgmNN3G0Vd3938"/>
+            </g>
+            <!-- 基线 -->
+            <line x1="50" y1="182" x2="650" y2="182" stroke="#6b5b45" stroke-opacity=".35" data-page-node-id="wTmHSM8LbyQCQv3d1MWydH"/>
+            <!-- 面积与曲线 -->
+            <path d="M82,114 L161,89 L257,56 L338,58 L400,60 L467,172 L533,97 L606,77 L606,182 L82,182 Z" fill="url(#agrad)" data-page-node-id="T5fu55q7R5u1AmILTSN11Y"/>
+            <polyline points="82,114 161,89 257,56 338,58 400,60 467,172 533,97 606,77"
+                      fill="none" stroke="#9e2f24" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" data-page-node-id="RHh5WEGBdFqtOsZxVRA3bd"/>
+            <!-- 注记 -->
+            <text x="257" y="40" font-size="12" fill="#b8860b" text-anchor="middle" font-family="KaiTi,serif" data-page-node-id="9wwdk0ONdBDEh8quPO2sy9">全片情绪最高点</text>
+            <text x="467" y="156" font-size="12" fill="#4a6b57" text-anchor="middle" font-family="KaiTi,serif" data-page-node-id="dSzFp1DeEIMO6Jc55SDnNo">全片最轻 · 留白</text>
+            <!-- 数据点 -->
+            <circle cx="82"  cy="114" r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="8VF8MS87hXmJxvhCroEtaY"/>
+            <circle cx="161" cy="89"  r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="ER9y7MCUgxWAtGCU0OhhJW"/>
+            <circle cx="257" cy="56"  r="6"   fill="#b8860b" stroke="#f5efe0" stroke-width="2" data-page-node-id="cohSeNfN8Vs2n6VnfW4TJy"/>
+            <circle cx="338" cy="58"  r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="DdzbsWz6c4A8qHGZO8Dl7T"/>
+            <circle cx="400" cy="60"  r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="AqhhUNPkuxFC7asevaAxUa"/>
+            <circle cx="467" cy="172" r="5"   fill="#4a6b57" stroke="#f5efe0" stroke-width="2" data-page-node-id="3r3jiuVc54aurKGqh7S1A5"/>
+            <circle cx="533" cy="97"  r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="l8W4ScP6yZolFwA8SqGEx8"/>
+            <circle cx="606" cy="77"  r="4.5" fill="#9e2f24" stroke="#f5efe0" stroke-width="2" data-page-node-id="EB4MW7MYKMJ5eFDXgFneA9"/>
+            <!-- 段号与情绪 -->
+            <g font-size="12" fill="#6b5b45" text-anchor="middle" font-family="KaiTi,serif" data-page-node-id="HwbY6QIZuIh9TqgU2ok4vB">
+              <text x="82" y="204" data-page-node-id="CkLL9JqpHDy3uwh04kAWqq">第一段</text><text x="161" y="204" data-page-node-id="I6g8MEAN7fO1fPV6DVUd5T">第二段</text>
+              <text x="257" y="204" data-page-node-id="WAT4t8cyoE6nboKZPcvpPM">第三段</text><text x="338" y="204" data-page-node-id="pfnrsjAq3Y3wDL53abwSpN">第四段</text>
+              <text x="400" y="204" data-page-node-id="mRFXXjdr9SFCJX1BwkPSsM">第五段</text><text x="467" y="204" data-page-node-id="LAL26BgvRN8NaqmgQSTmEY">第六段</text>
+              <text x="533" y="204" data-page-node-id="s11ayw4TyjD2YVjDULjKY0">第七段</text><text x="606" y="204" data-page-node-id="EFZoueBPSoHBc5I2WHFX2q">第八段</text>
+            </g>
+            <g font-size="13" fill="#2f2013" text-anchor="middle" font-family="KaiTi,serif" data-page-node-id="lquhuhnCWinzaml4NAv1Od">
+              <text x="82" y="223" data-page-node-id="c9hU7sExMs8EHZ51tD0oCK">孤寂起手</text><text x="161" y="223" data-page-node-id="ig0plc3nqCmhaMcylIkf1v">流光渐明</text>
+              <text x="257" y="223" data-page-node-id="F4dEgXPjxIGlmGIhHS3irm">盛衰顶点</text><text x="338" y="223" data-page-node-id="cAoILKVBra5nT52NjE0A6n">殿堂庄严</text>
+              <text x="400" y="223" data-page-node-id="0o9IDKK9RQxw07vjCkqfjv">命运低回</text><text x="467" y="223" data-page-node-id="Mt6djvZ8DQPLz1DcsXV68M">刻意留白</text>
+              <text x="533" y="223" data-page-node-id="ehAgfMt75U9hUx57qLmjEK">思辨清冷</text><text x="606" y="223" data-page-node-id="VbmaqOUDje64qZNq3RcriE">回望升华</text>
+            </g>
+            <g font-size="10" fill="#6b5b45" fill-opacity=".7" text-anchor="middle" font-family="KaiTi,serif" data-page-node-id="KjVmG5ndWubeqnIx7XSryT">
+              <text x="50" y="242" data-page-node-id="VD9bPlu219ajL5tZDgvwO9">0″</text><text x="352" y="242" data-page-node-id="GOENl3eAuPujP5vbRUuCNS">30″</text><text x="650" y="242" data-page-node-id="A2Ns45oqQMyh4HCqxcF3co">59.5″</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 脚本 + 分段视频 ============ -->
+  <section id="script" data-page-node-id="7cws7hfKGrCFLwPpptNYTQ">
+    <div class="wrap" data-page-node-id="CuWUTv1pvwWmWBZLB1w3Z1">
+      <span class="skicker" data-page-node-id="qGBjpJGYmsNehx5BdvB2Er">SCRIPT · 八段脚本</span>
+      <div class="shead" data-page-node-id="ls2cdREYIO6CYsDglAHTza"><span class="seal sm" data-page-node-id="w9snkkcSVww5wmKrvi1DFk">稿</span><h2 data-page-node-id="5kAiuoGXtFY2DbtQPmrwBT">八段骨架，分段立意</h2><div class="srule" data-page-node-id="WwXhFy4lXeCsTIoDgTq0K8"></div></div>
+      <p class="sdesc" data-page-node-id="bxzUEVAYpUiNrpEgOouurN">
+        每段一句话讲透一个点，口播约七至八秒；下方每张卡片对应一条已合成的分段视频，可直接点播。
+      </p>
+      <div class="rhythm" data-page-node-id="VeDyjCFI7jC3HMKJ6R0wvL">
+        <span class="chip" data-page-node-id="CX3KYizrnCGewS3Q0cHj5V">第一・二段 <b data-page-node-id="kQMAA5NFDf2UGdNGRzRDtM">建立认知</b></span><span class="arr" data-page-node-id="eQ7gGQzVy4X7I1j20ngHmJ">→</span>
+        <span class="chip" data-page-node-id="5Hj6t6eFC9FCnwrqjjTpAd">第三・四段 <b data-page-node-id="VrKrdEc0W9Ml53rlY6bu7x">故事与思想</b></span><span class="arr" data-page-node-id="9jpR7wHvCAL7Gq9Ofuh3WG">→</span>
+        <span class="chip" data-page-node-id="BdiiLd6gsqmBy16PYYFf3X">第五・六段 <b data-page-node-id="DtufL9IysPNAU6kQJrTECZ">审美层次</b></span><span class="arr" data-page-node-id="V3dG2opFD1ZWRkcQs1h6NW">→</span>
+        <span class="chip" data-page-node-id="2l4BH8EMD4D03FcKhY5znp">第七・八段 <b data-page-node-id="hntJq6BMFsXxxuw3QZIA74">延展落地</b></span>
+      </div>
+
+      <!-- 第一段 -->
+      <article class="seg-card reveal" data-page-node-id="OvXRxpCNR2hokiF9pXE3uQ">
+        <div class="vid" data-page-node-id="QwI1xmDqNPFgBBGECqJo3P"><video controls preload="none" poster="seg01_01_雪芹独坐.png" src="视频素材/_分段/第1段_作者与时代背景.mp4" playsinline data-page-node-id="5mrun0W6XuBuBrpwP57j8D"></video></div>
+        <div class="seg-body" data-page-node-id="vy4yOXhYFbW4w6I3Rm7gof">
+          <div class="seg-head" data-page-node-id="Xl8e48ClC9ACEUIaJyFkVL"><span class="seal" data-page-node-id="e080whZpRfd7jQhXj9v7fy">一</span><h3 data-page-node-id="fnT1jnBvuJAPANocdz0Bk7">作者与时代背景</h3><span class="chip" data-page-node-id="nDPrYYwK3jn34AKdANN5OT">6.4″ · 3 帧</span></div>
+          <div class="lab" data-page-node-id="QfmrC3s7REjfcMKIbijgGw">口　播</div>
+          <p class="shot" data-page-node-id="YEKZ9ICyTjgoMAiH01Ggzl">讲曹雪芹其人。《红楼梦》写于清代乾隆年间，作者曹雪芹出身江宁织造曹家，祖孙三代深受康熙信任，家世极盛；雍正朝曹家被抄没，他从锦衣玉食跌到「举家食粥」。书中的繁华与败落不是想象，是他亲历的人生。他批阅十载、增删五次，用半生落魄写尽一场旧梦。</p>
+          <div class="lab" data-page-node-id="OaRPyZ5uVY6Fwvl6drEL0r">画面字幕</div>
+          <div class="substrip" data-page-node-id="tBGKcfjQeoyAwTkrqh5QME"><p data-page-node-id="riBOYZs3SINZ8qkgc4dxXM"><span data-page-node-id="f4nje9w1Oae0yuDO8d0v3Z">《红楼梦》，清代乾隆年间成书</span><span data-page-node-id="HZlOrPR2CuQAVF2dp9h2V6">作者曹雪芹，出身江宁织造曹家</span><span data-page-node-id="EFpn7YlMRczFHNtaHRUblq">曹家由极盛到被抄没</span><span data-page-node-id="Z16HDKRCoRmRnTfcRBKM2K">批阅十载，增删五次</span><span data-page-node-id="s8csXTznsHaleC19nFfE2H">繁华与败落，都是他亲历的人生</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第二段 -->
+      <article class="seg-card reveal" data-page-node-id="fFxXoqMJqEacSb4imbDS5X">
+        <div class="vid" data-page-node-id="L1e4mbxqyfmDGKdSamLTCQ"><video controls preload="none" poster="seg02_01_群像横卷.png" src="视频素材/_分段/第2段_主要人物.mp4" playsinline data-page-node-id="sdTDe82m3fDW4Va3HUWlYb"></video></div>
+        <div class="seg-body" data-page-node-id="6lwhRPfLN1WJj6kwVqg8tD">
+          <div class="seg-head" data-page-node-id="NM8ledqnr1aaeGIq1gvJpV"><span class="seal" data-page-node-id="XZEnkXC77KmnA1IIC5ezGt">二</span><h3 data-page-node-id="OGQCVEYuQYmuiQhrqR3kGh">主要人物</h3><span class="chip" data-page-node-id="s8NdBggKzXqpag6y28lrLV">9.1″ · 5 帧</span></div>
+          <div class="lab" data-page-node-id="tzFbXjM0rLwYNkEoygAjrH">口　播</div>
+          <p class="shot" data-page-node-id="V22indlxsDo04CMjtwie41">立人物骨架。先说贾府两条线：贾家本族与史、王、薛三家亲戚。核心是三个人——含玉而生、离经叛道的贾宝玉，诗性与敏感并存的林黛玉，理性周全的薛宝钗。加上一个把贾府撑起来的管家式人物王熙凤，还有贾母这位家族的最高长辈。她们合起来，就是「金陵十二钗」。</p>
+          <div class="lab" data-page-node-id="M4RFbIjvpUiuCtAxU4UokY">画面字幕</div>
+          <div class="substrip" data-page-node-id="g64QtUiN9dO0ZYzgi4qbLl"><p data-page-node-id="XPxlFV7lAppdZuJNDJCIRZ"><span data-page-node-id="U09ZtFh7qM2W6t32veL1CV">贾府：荣国府、宁国府</span><span data-page-node-id="OSYdiBdmlbGyFS4QywDE6B">贾宝玉：含玉而生，不喜仕途</span><span data-page-node-id="93AUhgxbqtZ1v9HaHjTjEv">林黛玉：诗性与敏感</span><span data-page-node-id="jQC5V9quEuEnuOHBIXJzEZ">薛宝钗：理性与周全</span><span data-page-node-id="hIruilRyeDlkTUueHzNQ38">王熙凤：机关算尽太聪明</span><span data-page-node-id="5XCqA7X26XEB2GXshmBGUg">金陵十二钗，判词即命运</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第三段 -->
+      <article class="seg-card reveal" data-page-node-id="5u7je49Fta5buWV1K9z1Vo">
+        <div class="vid" data-page-node-id="2Fjx22TrOCX1ANdd1WbCJG"><video controls preload="none" poster="seg03_01_石头入世.png" src="视频素材/_分段/第3段_主要剧情梗概.mp4" playsinline data-page-node-id="A9oOE6I6jZhZ0kTMGyQHxp"></video></div>
+        <div class="seg-body" data-page-node-id="EUdYm4JakyNSwhGc1atIru">
+          <div class="seg-head" data-page-node-id="aqs4BuY9z6QgYLtoIbgid5"><span class="seal" data-page-node-id="7Sg1pJnt5EypFDAFmmdAD8">三</span><h3 data-page-node-id="yAjYddXvDTXS9eaFYeUnkh">主要剧情梗概</h3><span class="chip" data-page-node-id="nvMrTkt5Vkx3WIwi5kFHMD">10.1″ · 5 帧</span></div>
+          <div class="lab" data-page-node-id="DYwkV7UGrJGQI8XxB6GoQu">口　播</div>
+          <p class="shot" data-page-node-id="XIyTtuATopC9dZnsq0SDky">只讲全书的起、盛、衰三步。起点是石头入世，木石前盟与金玉良缘的双线纠葛。中段是大观园建成，结社赋诗、笑语喧哗的青春盛景。转折是抄检大观园——由盛转衰的第一记重击。终点是黛玉泪尽而逝、宝玉出家、贾府败落，一场盛宴散得干干净净。</p>
+          <div class="lab" data-page-node-id="1B5iZRqeS4TgdUcF27m1nm">画面字幕</div>
+          <div class="substrip" data-page-node-id="pgG0Gn72xVHxPh0JX0JF66"><p data-page-node-id="M4jltVEMbn9PcLuuUpAkDJ"><span data-page-node-id="yDjB2BRA6oFAAsxYWEB2DY">起：石头入世，木石前盟</span><span data-page-node-id="wx36qCbyEyErwXrji3BH0U">盛：大观园建成，结社作诗</span><span data-page-node-id="t6JLElzxkB3vu1ud4dnQAu">转：抄检大观园</span><span data-page-node-id="GVeyJTPCR1Tu2wxA1wGgq7">衰：黛玉泪尽，宝玉出家</span><span data-page-node-id="rWa7Ino7lRdVFnbuJHgY0w">贾府败落，一场盛宴散尽</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第四段 -->
+      <article class="seg-card reveal" data-page-node-id="de7GA6uxU8rE41uK4MWr8E">
+        <div class="vid" data-page-node-id="lC6cKEn97yc2k3Vch6vCzG"><video controls preload="none" poster="seg04_01_人物长廊.png" src="视频素材/_分段/第4段_中国文学中的价值.mp4" playsinline data-page-node-id="VEDGCvN0We0kHwk10sJi7K"></video></div>
+        <div class="seg-body" data-page-node-id="9O1GJeUBQbpykrQQCqNQtj">
+          <div class="seg-head" data-page-node-id="b7bxTKurDMHIie83wN4X0L"><span class="seal" data-page-node-id="DJbEgbFKkxD8mOPA9H2QTs">四</span><h3 data-page-node-id="eBOiGEWv0o58UlDnqeNgqy">小说在中国文学中的价值</h3><span class="chip" data-page-node-id="4NdhFbtmFvefB0HF146cIZ">6.0″ · 3 帧</span></div>
+          <div class="lab" data-page-node-id="DW8uStghPurJnQvFG3Xnxz">口　播</div>
+          <p class="shot" data-page-node-id="KrE1opZUeAdu1186c8sDT1">讲它为什么是「古典小说最高峰」。四百多个人物各有面目，主角不完美，配角有纵深；网状叙事多线并进而不乱；诗词与白话交融，雅俗各得其所。它既是一部人情小说，也被称为「封建社会的百科全书」，与《三国》《水浒》《西游》并称四大名著，却代表着古典小说艺术的顶点。</p>
+          <div class="lab" data-page-node-id="jKr50egr10gZiQPuHoZOId">画面字幕</div>
+          <div class="substrip" data-page-node-id="JfM4NFu7DxLK76GAEroE5a"><p data-page-node-id="E2AkMMvzxbBdLx8ckcoekR"><span data-page-node-id="JpZg2hr6DRVbyr4SLv2PvH">四百余人物，各有面目</span><span data-page-node-id="g3a8ZAYMkLCi2LDK7zW0bR">网状结构，多线并进</span><span data-page-node-id="Ihs4d9jyivxqXphNhJVqHA">诗词与白话交融，雅俗兼备</span><span data-page-node-id="jJ0ZnXivWcCrOGi889TKWI">中国古典小说的最高峰</span><span data-page-node-id="dxCkYRZVusZ3XuasiMH1Uq">四大名著中艺术成就最高的一部</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第五段 -->
+      <article class="seg-card reveal" data-page-node-id="X5hZ33M9b2hQfekH75kkaf">
+        <div class="vid" data-page-node-id="kkiN4EWZyhwRCsJOXkezgA"><video controls preload="none" poster="seg05_01_宴席残灯.png" src="视频素材/_分段/第5段_主旨内核.mp4" playsinline data-page-node-id="yzt8yebkoO1PMq1TerUIgJ"></video></div>
+        <div class="seg-body" data-page-node-id="V3ypBEIc3KIrKIQ7DTY41k">
+          <div class="seg-head" data-page-node-id="5T51LahrAaqifdM5m2uWAe"><span class="seal" data-page-node-id="wk3Oy5wcXl2n05bBkbXhbG">五</span><h3 data-page-node-id="AoehHXCK6eIcjJEEWVau3a">主旨内核</h3><span class="chip" data-page-node-id="VKkujyoBQRP3MamWQMJZac">6.2″ · 3 帧</span></div>
+          <div class="lab" data-page-node-id="Y2gjehDb3A4J2oxn7Y2HsI">口　播</div>
+          <p class="shot" data-page-node-id="0tKhHoK4lF0mKAGrAONuq0">回答「这本书到底想说什么」。「盛筵必散、繁华成空」是它的底色，全书用甄士隐、贾雨村点出「假作真时真亦假」。它「大旨谈情」，写情的执着，也写情的虚妄。悲剧分三层：爱情悲剧、家族悲剧，往上是一个时代与个体的无力。繁华终会散场，可这本书偏偏让人一读再读。</p>
+          <div class="lab" data-page-node-id="MY9AJtnBeKfusYvnEwCgXR">画面字幕</div>
+          <div class="substrip" data-page-node-id="gllYdxacC1CpzRaE3zSuid"><p data-page-node-id="jPgMgItmdTzD7upLUe7cbh"><span data-page-node-id="a6igqD3zqhpBgs6SHNYJ5U">底色：盛筵必散，繁华成空</span><span data-page-node-id="DovfNYTF1Y2U6HInrCJOgO">假作真时真亦假</span><span data-page-node-id="XEBAsxYz4bXAChmKaegMbJ">大旨谈情：情的执着与虚妄</span><span data-page-node-id="dL8Owg8YvvZ0EeK3DWov0O">悲剧三层：爱情、家族、时代</span><span data-page-node-id="OPo1l4RTrWOx2lDhqHJyJW">一切成空，为何还让人反复读</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第六段 -->
+      <article class="seg-card reveal" data-page-node-id="00Kjh6RA7OCkmWDJpMvVUp">
+        <div class="vid" data-page-node-id="9Rez4YBZ1ia5qlwY2VcxI4"><video controls preload="none" poster="seg06_01_伏笔物象.png" src="视频素材/_分段/第6段_艺术手法.mp4" playsinline data-page-node-id="0RxfdQje18KJip8ZyBQVNu"></video></div>
+        <div class="seg-body" data-page-node-id="tHaAvfNSPuWTJ4aMyon4FW">
+          <div class="seg-head" data-page-node-id="eX9qgKdoAHo6pYq7pofGKo"><span class="seal" data-page-node-id="1pve9C9AURcwffx5Hyi459">六</span><h3 data-page-node-id="gZQ47IwxExChhK9ApEKeiH">艺术手法</h3><span class="chip" data-page-node-id="BQvNnCisHWJfRmpA4EamyA">7.1″ · 4 帧</span></div>
+          <div class="lab" data-page-node-id="mZjnV8DbIK1VpCWJimtlUs">口　播</div>
+          <p class="shot" data-page-node-id="EG5EtTjlCMyVgyP0Gc4GSf">看它的技法有多精密。草蛇灰线、伏脉千里——一个物件、一句话、一个人名，后面全是呼应；结构讲究对称与对照：宝钗对黛玉，贾母对刘姥姥，繁华对败落。每个人的诗都是他性格与命运的写照。还有谐音玄机：元迎探惜，原是「原应叹息」。连一顿饭、一件衣服，都写出等级与身份。</p>
+          <div class="lab" data-page-node-id="lXfHDqKmGexlteS6yy7nZM">画面字幕</div>
+          <div class="substrip" data-page-node-id="078Sm8E3M0GIw4pFzUvCYp"><p data-page-node-id="9sE9BVwwZH2xqnyOcnKpdl"><span data-page-node-id="BvP9w3OAmTiCFzWea1S2IG">草蛇灰线，伏脉千里</span><span data-page-node-id="3okrFFrH25R3YKwgGMLjoY">伏笔：物、话、人名皆有呼应</span><span data-page-node-id="HDRb3S2q3RbBBqCsIfndNr">对照结构：宝钗与黛玉</span><span data-page-node-id="8Jhq9tjCaHfDAAQaGAWlXr">诗如其人，诗即命运</span><span data-page-node-id="CLpwIEKR6BxjCjWkq0mu1J">谐音：元迎探惜，「原应叹息」</span><span data-page-node-id="QvCqrFoqG22XDRvTV8DyOG">细节见等级，一顿饭都有规矩</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第七段 -->
+      <article class="seg-card reveal" data-page-node-id="yYeHNIh0l2OaUlOJxN0H4V">
+        <div class="vid" data-page-node-id="95NkwfJFVQyyl11MaEkXTd"><video controls preload="none" poster="seg07_01_脂评抄本.png" src="视频素材/_分段/第7段_版本与红学.mp4" playsinline data-page-node-id="MYnVYcHbtnGxDEDYYFm6Lo"></video></div>
+        <div class="seg-body" data-page-node-id="qtd8lqm79doZn6oyuktwvE">
+          <div class="seg-head" data-page-node-id="f812qTZgKV64rbaId9Mv0P"><span class="seal" data-page-node-id="XQjEpNOIeXZ5qS5ptG7cZF">七</span><h3 data-page-node-id="MAAuZ2dQCKn0k6AACnzjmD">版本与红学</h3><span class="chip" data-page-node-id="SAaF5OLCfjdQwmkEC0oJXj">6.0″ · 3 帧</span></div>
+          <div class="lab" data-page-node-id="yHlc8TAL9MQRodln29AV1C">口　播</div>
+          <p class="shot" data-page-node-id="9qy1sJNgAzBZXAc1QPqfXj">讲「结局为什么不止一个」。现存两大系统：一是带批语的脂评抄本，只存八十回；二是程高刻本，一百二十回完整流传。争议的核心是后四十回究竟出自谁手，黛玉是「泪尽而逝」还是「掉包计」，也因此成了百年悬案。围绕它形成了红学，分评点、索隐、考证、文本几大流派。新手建议先读一百二十回通行本，回头再读脂评本。</p>
+          <div class="lab" data-page-node-id="AclctEiOblBHENP46CnozI">画面字幕</div>
+          <div class="substrip" data-page-node-id="7ybuneEENaBMP0gW2y033x"><p data-page-node-id="WPQmBOTYWX0TcjbtkoTbf3"><span data-page-node-id="1CrBzr29NNIflxDDTFtn0j">脂评抄本：八十回，带批语</span><span data-page-node-id="pEXrGCFhXbV6nmBbrVKDOK">程高刻本：一百二十回</span><span data-page-node-id="G09NsCFBkcPaDaObW0OFpG">争议：后四十回作者是谁</span><span data-page-node-id="CerEHk4SZBmVQC1kJnIDrM">红学流派：评点、索隐、考证、文本</span><span data-page-node-id="FRy7dHPoNmKQaSBIlOCmM0">新手先读一百二十回通行本</span></p></div>
+        </div>
+      </article>
+
+      <!-- 第八段 -->
+      <article class="seg-card reveal" data-page-node-id="LsplGRqzXOazLfl9tBb4Nt">
+        <div class="vid" data-page-node-id="a1VrdHw8JpazdkiH7WMjjz"><video controls preload="none" poster="seg08_01_舞台水袖.png" src="视频素材/_分段/第8段_文化影响与当代阅读.mp4" playsinline data-page-node-id="kAk8vqiuDY0ac2La4CicMI"></video></div>
+        <div class="seg-body" data-page-node-id="EDAh5ETcloEr1GGLOW8nxD">
+          <div class="seg-head" data-page-node-id="cmusPRvfHnxJqaCPAv1c6v"><span class="seal" data-page-node-id="BRaaoGWq7lFkMMARPXDnlJ">八</span><h3 data-page-node-id="lULUbPzg3YwHhournYFqdJ">文化影响与当代阅读</h3><span class="chip" data-page-node-id="JQ6Gppod7totRimdWubULT">8.6″ · 4 帧</span></div>
+          <div class="lab" data-page-node-id="YMvcNXTVpht6rJbOSI2Hs1">口　播</div>
+          <p class="shot" data-page-node-id="nWHBzhGG6jjB3Y1nBqCCTy">最后落到「今天为什么还值得读」。它早已溢出书本：越剧、京剧、87 版电视剧、绘画与文创，无数衍变；大量成语、俗语和人物形象进入日常表达。它写家族与人际、女性的处境、审美与生活方式，今天读来依然贴身。入门路径很简单：先读前五回，那里是全书的提纲；再顺读全篇；最后回看判词与批语。它真正教人的，是如何看人生。</p>
+          <div class="lab" data-page-node-id="7HsJFpI9QjtKdqwO14f9GH">画面字幕</div>
+          <div class="substrip" data-page-node-id="sCRRIodCJNHLX6D6fYModL"><p data-page-node-id="cW3iAGtCKtFhjMFAcAOTeJ"><span data-page-node-id="BIuwinyu97D07mPCUB40td">衍生：越剧、京剧、87版电视剧</span><span data-page-node-id="zx2cVEA52aFuFV8traCTkK">大量成语俗语进入日常表达</span><span data-page-node-id="SAZTBvBs5lWBBCW2i9PmuC">写女性处境，也写家族与人际</span><span data-page-node-id="mAxuImRyRyn07MyaVIekYa">入门：先读前五回全书总纲</span><span data-page-node-id="NhDCiQ8Z07BEgD5O2TGF2B">它的价值，在教人如何看人生</span></p></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 画卷（图片素材） ============ -->
+  <section id="gallery" data-page-node-id="aDLnTmOVb91zUQloQeUEDd">
+    <div class="wrap" data-page-node-id="YGq0KId0al4AgjeP2nYtyf">
+      <span class="skicker" data-page-node-id="PmBfDqJMwgvrRhKAuA2s7h">GALLERY · 三十帧画卷</span>
+      <div class="shead" data-page-node-id="13omvprXRfDHV0X3KimtaA"><span class="seal sm" data-page-node-id="NNNFAE8GWRNd79qDIdbqS8">画</span><h2 data-page-node-id="cV4ekCNsX8Rqa5dETs9x2s">三十帧 · 工笔重彩长卷</h2><div class="srule" data-page-node-id="5HysIqjlBUemSK2bed5Jtu"></div></div>
+      <p class="sdesc" data-page-node-id="9auiWUZqCoNWjoFCjqNOIy">
+        全部 30 帧分镜原图（736×1312，9:16），按八段各成一卷，可横向展阅；点击任一帧可放大细看。画面为传统国画工笔重彩，参考《韩熙载夜宴图》分段式构图与 87 版《红楼梦》人物造型。
+      </p>
+      <p class="gal-hint" data-page-node-id="QHBrAN2oWrqA1B5iaZq2FZ">← 横向滑动展阅 · 点击放大 →</p>
+
+      <div class="vol-head" data-page-node-id="0Jbs7B0YBP5f5ZLL6MzKHb"><span class="seal sm" data-page-node-id="qDFr3VMTqkKH6gbghMD5dB">壹</span><h3 data-page-node-id="uuW9bOvyim1F4hrmpD9dgX">第一卷 · 作者与时代背景</h3><span class="cnt" data-page-node-id="rBsdFgep95jvQZWmvWr5Dl">3 帧</span><div class="vrule" data-page-node-id="A6g5hXuhbBhFHbNBZYN4w8"></div></div>
+      <div class="scroller" data-page-node-id="bzpJc6cFTyDNUctA9TkwPL">
+        <figure class="gal-item" data-seg="第一段 · 作者与时代背景" data-page-node-id="BSijylPRECxImEToUzaRg9"><img loading="lazy" src="seg01_01_雪芹独坐.png" alt="雪芹独坐" data-page-node-id="t74zAjdYsiEDdcomCKWeOR"><figcaption data-page-node-id="tovJlhpaDVVlUA150gdaWM"><b data-page-node-id="p8XisceZMhWvcrziyNZXRV">雪芹独坐</b><span data-page-node-id="53lfSxiRIwuNIx6MZaHHUN">《红楼梦》，清代乾隆年间成书／作者曹雪芹，出身江宁织造曹家</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第一段 · 作者与时代背景" data-page-node-id="n089pt51Nk5oyuEUM1ZmRQ"><img loading="lazy" src="seg01_02_织造府鼎盛.png" alt="织造府鼎盛" data-page-node-id="XF4GauWVXaYD8g1eB4LHyr"><figcaption data-page-node-id="DvVUwDEi6fxH0eaDoi2XNd"><b data-page-node-id="dtA5lfxshIn2RkEPn0DR5m">织造府鼎盛</b><span data-page-node-id="F2qv3JnydEFR3aS0slNizC">曹家由极盛到被抄没／他从贵公子沦为贫困文人</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第一段 · 作者与时代背景" data-page-node-id="fnIRArjbmzPoqllXCemARH"><img loading="lazy" src="seg01_03_抄家.png" alt="抄家" data-page-node-id="XI8xB3tEGC2skCmAMLK76E"><figcaption data-page-node-id="IDKXn8iOM2Tx7Bvcp1GLr6"><b data-page-node-id="qSMlFci1lDTMgGq6c1HWUc">抄家</b><span data-page-node-id="EENqZPI23sZbG5QGzecZEx">批阅十载，增删五次／繁华与败落，都是他亲历的人生</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="SBmlXcLZGKbcQle9m9IiRh"><span class="seal sm" data-page-node-id="O1Rzv1P396XE0gkBR9kOto">贰</span><h3 data-page-node-id="uCDFmEOJNF8bkFiPiRCaMi">第二卷 · 主要人物</h3><span class="cnt" data-page-node-id="MDIdBqeMTQpFEC6oEFlbll">5 帧</span><div class="vrule" data-page-node-id="dEhXqYzKzr9z2vJCk8mfqS"></div></div>
+      <div class="scroller" data-page-node-id="Z6vjw2Hh2B2bFCHF6Q0EIm">
+        <figure class="gal-item" data-seg="第二段 · 主要人物" data-page-node-id="XE27AiWCiiUFfzRs754FSL"><img loading="lazy" src="seg02_01_群像横卷.png" alt="群像横卷" data-page-node-id="KFr669A8M98DZS9tPAmJqU"><figcaption data-page-node-id="uYcSNHMFp4Rz03pyasStjN"><b data-page-node-id="Jk9VCy3DMyzkBaRRLrFuez">群像横卷</b><span data-page-node-id="js1k67gKF7gu3y1jo2eZkb">贾府：荣国府、宁国府／加上史、王、薛三家亲戚</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第二段 · 主要人物" data-page-node-id="OzRbvnHkx7vCEutfPpiIRo"><img loading="lazy" src="seg02_02_宝玉通灵玉.png" alt="宝玉通灵玉" data-page-node-id="yMWih2Kd9jnCdj2mVKxn6F"><figcaption data-page-node-id="a6SX3WVFNIvdxJJOAQEVQe"><b data-page-node-id="XGa28bAdkYMSLRZk0rB0cI">宝玉通灵玉</b><span data-page-node-id="9mQGtP21ccjcC8fRcZEYH2">贾宝玉：含玉而生，不喜仕途</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第二段 · 主要人物" data-page-node-id="VlEFzjC2qfk7CEA23Yshwf"><img loading="lazy" src="seg02_03_黛玉葬花.png" alt="黛玉葬花" data-page-node-id="GK3pAmECBILJ542NpIZX62"><figcaption data-page-node-id="xvHFnuWRVxh0X4kbCzspNH"><b data-page-node-id="8VzBo74bOXTWTwLdpFifDT">黛玉葬花</b><span data-page-node-id="OSuBIpVFTNii2N1vd24DcP">林黛玉：诗性与敏感</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第二段 · 主要人物" data-page-node-id="Zzy3lPB08ddQOjt8eooSPP"><img loading="lazy" src="seg02_04_宝钗理线.png" alt="宝钗理线" data-page-node-id="dz2E0du9h1U3xD2Fo3C3he"><figcaption data-page-node-id="bBqe2dGgCKr0lEGP2R857n"><b data-page-node-id="Zciy6HjjurbbtW1WdSHtgC">宝钗理线</b><span data-page-node-id="KBWCoVcE5ooUGRbdGUv3q9">薛宝钗：理性与周全／王熙凤：机关算尽太聪明</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第二段 · 主要人物" data-page-node-id="vILv1C01tuhUiHxCLM71qD"><img loading="lazy" src="seg02_05_十二钗册页.png" alt="十二钗册页" data-page-node-id="YPhC5R4cJD1l54b2SWI3Sh"><figcaption data-page-node-id="muI5apBBpzUfcC8FsC0MMs"><b data-page-node-id="h76RtKzHGrnvkHDNCAgUUB">十二钗册页</b><span data-page-node-id="UFet9ENR1uk892VmEAhSCZ">金陵十二钗，判词即命运</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="GfWiYsPo4buGAGYxGS03kq"><span class="seal sm" data-page-node-id="iZ0RtHHgMvpomcVOSoLSN2">叁</span><h3 data-page-node-id="PXRAcAVzvTGnbrHTVyOu1K">第三卷 · 主要剧情梗概</h3><span class="cnt" data-page-node-id="O8PFZwBA782WfRhlBh4xfE">5 帧</span><div class="vrule" data-page-node-id="RjeuOJmsYugKoyLuO33WCJ"></div></div>
+      <div class="scroller" data-page-node-id="t7uwQCH4Izr16HG3esrj2x">
+        <figure class="gal-item" data-seg="第三段 · 主要剧情梗概" data-page-node-id="L7qpywIr4ksqBqDdjReazr"><img loading="lazy" src="seg03_01_石头入世.png" alt="石头入世" data-page-node-id="xf51QjSlj55gLBzTULVY0K"><figcaption data-page-node-id="ajdy8LFzCPDe9KtYGqg9Gr"><b data-page-node-id="LDMaKDCUnt4DWEwZcvq82T">石头入世</b><span data-page-node-id="gJc0nfR5Kkja5GOFPRoJpg">起：石头入世，木石前盟</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第三段 · 主要剧情梗概" data-page-node-id="9e44DCYTnnY2puECpBJBGS"><img loading="lazy" src="seg03_02_大观园结社.png" alt="大观园结社" data-page-node-id="bXux9D2sgBpvluW2hvjtWs"><figcaption data-page-node-id="pL1OsAEXCwAyr5WfpmTwxG"><b data-page-node-id="aaXZEgn9J15hiLJoh0eH5Q">大观园结社</b><span data-page-node-id="lA4njj7SWP9HL7Yitj4lEh">盛：大观园建成，结社作诗</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第三段 · 主要剧情梗概" data-page-node-id="16IKFlYIMhHLuuCkFzoDQD"><img loading="lazy" src="seg03_03_抄检大观园.png" alt="抄检大观园" data-page-node-id="la1tdq71gxjhBPFUNAkvhl"><figcaption data-page-node-id="CTgHdxEKXQACuDTtSEbJ5V"><b data-page-node-id="Fg2NDpt7DMdZUOjMZzzDSU">抄检大观园</b><span data-page-node-id="rx1pSPRzkwYBpfysFfl75i">转：抄检大观园</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第三段 · 主要剧情梗概" data-page-node-id="hqsZsdQcqvUfT3ug73YiZP"><img loading="lazy" src="seg03_04_黛玉泪尽.png" alt="黛玉泪尽" data-page-node-id="CQv5bHXpIv0vZr4AMQg1JC"><figcaption data-page-node-id="6DBqpmmv2UZy2x3TSbSjo2"><b data-page-node-id="pyozM0iGHzZu8Z11x098Q7">黛玉泪尽</b><span data-page-node-id="HjPhaVsqRCD0SuO8qVJdHi">衰：黛玉泪尽，宝玉出家／贾府败落，一场盛宴散尽</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第三段 · 主要剧情梗概" data-page-node-id="edN4HHUpfnLS2ngJgdjg4Y"><img loading="lazy" src="seg03_05_白茫茫大地.png" alt="白茫茫大地" data-page-node-id="haeV90RImQRNinNXWg1ZOA"><figcaption data-page-node-id="gf1Dt7DTW8HkqE0fOmL7kw"><b data-page-node-id="W14PXroskdxicbHfjaxzSr">白茫茫大地</b><span data-page-node-id="uGEW66oZv4Cbw0I8VUSBLP">雪地里只剩一串浅脚印</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="hjUL7Qltr5J5JMFg0JZu1m"><span class="seal sm" data-page-node-id="lx6Yf6UohFaI6MlcfjlEjc">肆</span><h3 data-page-node-id="lnULkU0yH0ZYzWMPJ6iNDm">第四卷 · 中国文学中的价值</h3><span class="cnt" data-page-node-id="5Xn6dGD6tgoHOjUKesPEvQ">3 帧</span><div class="vrule" data-page-node-id="yLfYuI7lCvTMXPWBsZVmCg"></div></div>
+      <div class="scroller" data-page-node-id="A63kzBigLxvoJTKqNqDq1a">
+        <figure class="gal-item" data-seg="第四段 · 中国文学中的价值" data-page-node-id="c3CFwCFJMRCK38ddb4i9uD"><img loading="lazy" src="seg04_01_人物长廊.png" alt="人物长廊" data-page-node-id="lvD85regNeCtkagavlFLXd"><figcaption data-page-node-id="9jVehgAVhoSY72yEmi1dDY"><b data-page-node-id="WP41Soh2nRz8uf2WHd6GQM">人物长廊</b><span data-page-node-id="xfVJKmVnaQ8JTPeD9v00FP">四百余人物，各有面目／网状结构，多线并进</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第四段 · 中国文学中的价值" data-page-node-id="Jz5SccTXNH5EcbaZw8WgPA"><img loading="lazy" src="seg04_02_案上书卷.png" alt="案上书卷" data-page-node-id="StcWOxlVBiaowrDjfmgUkB"><figcaption data-page-node-id="n8CX50a6hloCWjaibBLnvT"><b data-page-node-id="HNCwFeAdWEaeAb6Qk9RAKi">案上书卷</b><span data-page-node-id="iPIOEZ9vcxCvX8iGQvD5y3">诗词与白话交融，雅俗兼备／中国古典小说的最高峰</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第四段 · 中国文学中的价值" data-page-node-id="e0ZiYZUa3FKcD4pklNapQj"><img loading="lazy" src="seg04_03_四大名著.png" alt="四大名著" data-page-node-id="T3GHmZhv3j9wYPtHp9jhsA"><figcaption data-page-node-id="3xUGLe0kDF8sfFgoLwarq8"><b data-page-node-id="rcftaYhfaWNKZ36d5I7ZXk">四大名著</b><span data-page-node-id="RB6GigaTPnJ0YQ4tj6f9rA">四大名著中艺术成就最高的一部</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="ddlwGKVvDDflDwi0bWZEbT"><span class="seal sm" data-page-node-id="sYb9wnKzx7Nj9f2vp8W9Sd">伍</span><h3 data-page-node-id="1jXSXTH1hI41UCeOQTaM0z">第五卷 · 主旨内核</h3><span class="cnt" data-page-node-id="ltyQtNJBv5OLOpC2dTrSEW">3 帧</span><div class="vrule" data-page-node-id="8pFW1dDfkRsQAgwCSeznDH"></div></div>
+      <div class="scroller" data-page-node-id="mF6WaeakZzEbRbaLlURF2C">
+        <figure class="gal-item" data-seg="第五段 · 主旨内核" data-page-node-id="Nhm0MTXE8Fm6urXxX00aIA"><img loading="lazy" src="seg05_01_宴席残灯.png" alt="宴席残灯" data-page-node-id="bgB1rqQ6ShJ49rM21VBL2M"><figcaption data-page-node-id="hJArbx9GgqDszhtc6uxY2Z"><b data-page-node-id="2xTnWWqioiwslXfw37PeAc">宴席残灯</b><span data-page-node-id="r7CtgbLmquVQxXOkYWRwzT">底色：盛筵必散，繁华成空／假作真时真亦假</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第五段 · 主旨内核" data-page-node-id="CBjPbiTrXtGwaY5FtPTFyW"><img loading="lazy" src="seg05_02_真假如镜.png" alt="真假如镜" data-page-node-id="ia9mITx2ugZGXNyXrcevGk"><figcaption data-page-node-id="O80BWvnBpowItbiet6prSr"><b data-page-node-id="SvpvWhsAFjMlZzWL4DZ8bz">真假如镜</b><span data-page-node-id="8ml2l4VPtIJ1wZnjjfsS12">大旨谈情：情的执着与虚妄／悲剧三层：爱情、家族、时代</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第五段 · 主旨内核" data-page-node-id="h2qOzBYGlRmZuyhvYDLMoI"><img loading="lazy" src="seg05_03_廊下独行.png" alt="廊下独行" data-page-node-id="7loRpUmAyoB2U6Ey3ZS9Z5"><figcaption data-page-node-id="5xiAscJgmaKbPCuXFhO7uV"><b data-page-node-id="LzncbBgPNHdEDvQ2xVCtz4">廊下独行</b><span data-page-node-id="vseQZAoWO74olOC2rT4Swo">个体在命运面前的无力／一切成空，为何还让人反复读</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="5ToQK7SinFOWMbDQISLHc6"><span class="seal sm" data-page-node-id="ZTwcgvAfaZnuxhIGi0eBSD">陆</span><h3 data-page-node-id="PgLdSFccK8JkAPVp3qoCaM">第六卷 · 艺术手法</h3><span class="cnt" data-page-node-id="SnkPKQyMPbuQwBPl1gYpEz">4 帧</span><div class="vrule" data-page-node-id="GYJJX3YikowKJ37xAiI7VK"></div></div>
+      <div class="scroller" data-page-node-id="4d8IO9WQmxgwjsXTekKIXE">
+        <figure class="gal-item" data-seg="第六段 · 艺术手法" data-page-node-id="7xl8j4MWEeDsyoVKIumZtb"><img loading="lazy" src="seg06_01_伏笔物象.png" alt="伏笔物象" data-page-node-id="l18sOJy0RYOJnLjNBPqRBe"><figcaption data-page-node-id="R0pnYwpfdoy8BZJyATqBTR"><b data-page-node-id="btXVV4FPXAwMUtjmahi8Pu">伏笔物象</b><span data-page-node-id="s7MpnhB8pv2XboSHevRHJZ">草蛇灰线，伏脉千里／伏笔：物、话、人名皆有呼应</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第六段 · 艺术手法" data-page-node-id="V9mPtrGw5o98GypEhcKH4a"><img loading="lazy" src="seg06_02_双人对镜.png" alt="双人对镜" data-page-node-id="EDDRshxhkESVJthirWu2UT"><figcaption data-page-node-id="70BnP5EC0jjsHuElrElA5w"><b data-page-node-id="MhFbk7uak20t9FATt2sfrt">双人对镜</b><span data-page-node-id="kpzmheLIX9BX02PMhVDAUF">对照结构：宝钗与黛玉</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第六段 · 艺术手法" data-page-node-id="U9d10nTVwxpMJ9aDm44VqR"><img loading="lazy" src="seg06_03_诗笺谐音.png" alt="诗笺谐音" data-page-node-id="TjpMB6rr5xKWxc0cx8m1JA"><figcaption data-page-node-id="LUPyobWeNibm1obzIJYh3l"><b data-page-node-id="mWNTC7BTFq3NCe37C1JuMo">诗笺谐音</b><span data-page-node-id="azWZoM050xvFRjYuPn3Nv5">诗如其人，诗即命运／谐音：元迎探惜，「原应叹息」</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第六段 · 艺术手法" data-page-node-id="YlvrojVVmfIpzEYDTdbwRO"><img loading="lazy" src="seg06_04_家宴等级.png" alt="家宴等级" data-page-node-id="Qgc2UtaItKzn2mOyVkW8F0"><figcaption data-page-node-id="IukMOZ3R4U7J4fxFkZ5yQG"><b data-page-node-id="kDaGD8B8tQzljC6h1DSqFY">家宴等级</b><span data-page-node-id="akvQtPvp6DFNJJEZlUZxsB">细节见等级，一顿饭都有规矩</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="0DEhdrLKkaoGncCPmmTe5F"><span class="seal sm" data-page-node-id="fsfGg1d6uNVfPsdx2PyJN9">柒</span><h3 data-page-node-id="3AqXYi6hFQyT5mnXQCURJb">第七卷 · 版本与红学</h3><span class="cnt" data-page-node-id="OhJYccXeH5iazSvtkYmyY9">3 帧</span><div class="vrule" data-page-node-id="DF1GOm4LHYEaj5aAslhXC5"></div></div>
+      <div class="scroller" data-page-node-id="WilKkBtGEAnG8OUD9cKTKc">
+        <figure class="gal-item" data-seg="第七段 · 版本与红学" data-page-node-id="O7bofxSnuUOXWOki7y23FC"><img loading="lazy" src="seg07_01_脂评抄本.png" alt="脂评抄本" data-page-node-id="LCP526Gw4RJDEpFHixZ51D"><figcaption data-page-node-id="EnSI050zGvhdotbSktqij7"><b data-page-node-id="AZhdefWGoBISA2i88hhgfC">脂评抄本</b><span data-page-node-id="9qYpKx6X0tcwbfYVkhw1jp">脂评抄本：八十回，带批语／程高刻本：一百二十回</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第七段 · 版本与红学" data-page-node-id="pFJBWuAgOcA9j6TgOw6PV4"><img loading="lazy" src="seg07_02_版本之辨.png" alt="版本之辨" data-page-node-id="lFinEuqEVZSMJrWNEkJWbk"><figcaption data-page-node-id="8KlbgX6pjuwDkVWiuOL4ed"><b data-page-node-id="GI5FnjboJHYweieOTpxVJb">版本之辨</b><span data-page-node-id="rpFCN4BXgG8lEE0cIXNohz">争议：后四十回作者是谁／脂砚斋批语是重要线索</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第七段 · 版本与红学" data-page-node-id="RAxd6AVtXquuoAEtn3l2rU"><img loading="lazy" src="seg07_03_书斋论学.png" alt="书斋论学" data-page-node-id="xqYhhP7GKNHhBJUCCKCaHo"><figcaption data-page-node-id="Ir1CskBucWhui8MupehjCq"><b data-page-node-id="qVA6QcVlReAThqMFPoAMcg">书斋论学</b><span data-page-node-id="okmnp1pvZ1LG3WA3dQkyWb">红学流派：评点、索隐、考证、文本／新手先读一百二十回通行本</span></figcaption></figure>
+      </div>
+
+      <div class="vol-head" data-page-node-id="gzWxKBMU04aXLwvfcvtsOg"><span class="seal sm" data-page-node-id="ycheAQe4t7ERWIS34KlSYw">捌</span><h3 data-page-node-id="2NQ0h9xSaFtQfEIH3EwjWs">第八卷 · 文化影响与当代阅读</h3><span class="cnt" data-page-node-id="GdB5eqrX14TIAzd2e2N4Xt">4 帧</span><div class="vrule" data-page-node-id="JelbcirwFLACgeOc0vAOHk"></div></div>
+      <div class="scroller" data-page-node-id="lGYL1kCUOTv8rA0RXTyMad">
+        <figure class="gal-item" data-seg="第八段 · 文化影响与当代阅读" data-page-node-id="wKOsKlnvUoG2jIclZ7LrDv"><img loading="lazy" src="seg08_01_舞台水袖.png" alt="舞台水袖" data-page-node-id="iPR4g5AUmC98bFJq46MZtU"><figcaption data-page-node-id="7PRhBsCP4aoOEVnuWkQcGo"><b data-page-node-id="fYPYWokzI6SCdIPagaE56N">舞台水袖</b><span data-page-node-id="gED87AWAcfPWtDhEspvYiD">衍生：越剧、京剧、87版电视剧</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第八段 · 文化影响与当代阅读" data-page-node-id="q8z181jQSC8EiainEkqEl9"><img loading="lazy" src="seg08_02_市井闲谈.png" alt="市井闲谈" data-page-node-id="qRDO00VQM63Zt8CVp5car7"><figcaption data-page-node-id="Y7sPpsAqMuPh9L6T17eeM2"><b data-page-node-id="95qLxrhVfSmSVvXpy80kNC">市井闲谈</b><span data-page-node-id="HSi8M8yR3v63AAHIEWxzlt">大量成语俗语进入日常表达／写女性处境，也写家族与人际</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第八段 · 文化影响与当代阅读" data-page-node-id="24urq8CHcH2J1CCeqwjsYo"><img loading="lazy" src="seg08_03_当代阅读.png" alt="当代阅读" data-page-node-id="ICl2DvZypmkty00WniKYh0"><figcaption data-page-node-id="COCkTPF00xFx3iW7kQReGM"><b data-page-node-id="SZppIzwJF7fbO6QTMJiyHN">当代阅读</b><span data-page-node-id="kqBkLORuDW205O1UyzoGlk">入门：先读前五回全书总纲／再顺读，最后看判词与批语</span></figcaption></figure>
+        <figure class="gal-item" data-seg="第八段 · 文化影响与当代阅读" data-page-node-id="UNirvQWr1YgA1Q57XID9wb"><img loading="lazy" src="seg08_04_长卷留白.png" alt="长卷留白" data-page-node-id="mREHYgKfnfGrXqkjGmxlVr"><figcaption data-page-node-id="l5Uw7K74kgz7ElIFLfbAMq"><b data-page-node-id="8hrGBCIRED34pQf0NSNKF1">长卷留白</b><span data-page-node-id="t90gcl3AT4WM55NjXBoeLl">它的价值，在教人如何看人生</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 制作说明 ============ -->
+  <section id="about" data-page-node-id="g8pkZ229a5Fao20v3wHBpq">
+    <div class="wrap" data-page-node-id="yeIB2aRawyxDHeVJHns9IO">
+      <span class="skicker" data-page-node-id="PxKPcaZafS7IUHdG2VYzWB">MAKING · 制作说明</span>
+      <div class="shead" data-page-node-id="BcqNUOCLdpoODvvtjoo6xH"><span class="seal sm" data-page-node-id="mXmsfPRA2kgZtvIY1cKIIL">制</span><h2 data-page-node-id="3r2OFAoUcHeSUbyEBxsci3">从脚本到成片</h2><div class="srule" data-page-node-id="cGoHPXHfUWhJEj5oegO83B"></div></div>
+      <p class="sdesc" data-page-node-id="KaVMK1n6i6tzeoM8vynffg">一条完整的 AI 辅助制作流水线，每一环的产物都保留在工作目录中，可追溯、可重制。</p>
+
+      <div class="steps reveal" data-page-node-id="8xBRQDVSoLAOM3LYGVdpV0">
+        <div class="step" data-page-node-id="oUlKVCrQEIde7iF2LF4Nh9"><span class="n" data-page-node-id="LECkUiSg0nlo18VR68SWvA">其一</span><b data-page-node-id="NLiHsKwdMaou0nDDX7Jh0M">八段脚本</b><span data-page-node-id="Pwx41M1C8MKVU5sev6g06Z">框架式结构，口播＋分行字幕，控制在 60 秒内</span></div>
+        <div class="step" data-page-node-id="44EPbrPsBycCxSQOeBE6pH"><span class="n" data-page-node-id="IGT8tjysFDTQC1GzufiLng">其二</span><b data-page-node-id="0iSrV2vVEFCeRoy4wSCdg6">国风生图</b><span data-page-node-id="2KMxnGwOYi6mWboS9fDJGH">豆包 Seedream 4.0 · 30 帧 · 1K · 9:16</span></div>
+        <div class="step" data-page-node-id="HiGUeQ8DbGDyFVf4AWdvvE"><span class="n" data-page-node-id="wG6HAoijzgS4JtOdK4zgOG">其三</span><b data-page-node-id="guyKD2rHehPy3MbLyICMEf">图生视频</b><span data-page-node-id="HRkNQxiheQn2IO5kZeZDOU">豆包 Seedance 1.0 Pro · 首帧驱动 · 按需 2–3 秒/帧</span></div>
+        <div class="step" data-page-node-id="5hVHbMyKXqJOkOfPpgTaqr"><span class="n" data-page-node-id="PZqafGvMtDrCmBr8mccvxn">其四</span><b data-page-node-id="ETaJDnqYSvJdUm7M8x3Nu3">字幕合成</b><span data-page-node-id="Rg6KMTrDO0b1GyUnM2GQP8">华文行楷 · 暖白描边 · 逐帧叠加后拼接八段</span></div>
+        <div class="step" data-page-node-id="fBrSGwPMFH4snkd6TQ0pKI"><span class="n" data-page-node-id="NLsa5ZEDSWQpt5Adh8VOka">其五</span><b data-page-node-id="2KqGW89reOXClaOLgUhrHm">古风配乐</b><span data-page-node-id="xsyLUwcDhLbypJnAi4hE7g">numpy 纯代码合成 · 五声调式 · 八段情绪线</span></div>
+        <div class="step" data-page-node-id="W14HOnp0Ah3sss2XD1bIpB"><span class="n" data-page-node-id="eE3xJuYdGHJ9o34XMXmuyl">其六</span><b data-page-node-id="ZtGCrZ8IS7ADjtassGil7n">混音成片</b><span data-page-node-id="D8FHsTVTm4kSXUe63D1VJi">配乐＋环境音双层混音 · 限幅 · 首尾淡化</span></div>
+      </div>
+
+      <div class="spec" data-page-node-id="WmHYdySDllRi58xGtr7ETF">
+        <div class="card reveal" data-page-node-id="DjARJ46FACnrFCAgBmeuyP"><i data-page-node-id="p78DenLZaNgOeP4yTL0pOo">成片规格</i><b data-page-node-id="3hVxyreIdHlvU1ERLa8Jpx">59.5″ · 480×864 · 24fps</b><span data-page-node-id="yMcPLUZWDpkkEgeQHkn8EZ">H.264 + AAC 192kbps · 竖版 9:16</span></div>
+        <div class="card reveal" data-page-node-id="hk99HdAZxA28qbtPU8RctR"><i data-page-node-id="7qwbM0eAsKqN0jNRV6nqh7">画面风格</i><b data-page-node-id="dqmStr8b7Rrn8VTvnSysty">工笔重彩 · 绢本设色</b><span data-page-node-id="e9r7zUTM0zz22haeEGygzK">参考《韩熙载夜宴图》构图与 87 版《红楼梦》造型</span></div>
+        <div class="card reveal" data-page-node-id="FunzPBHajj66VrQfUnLBcG"><i data-page-node-id="XANIfiBd2oCAZzAqkAQVEY">字幕</i><b data-page-node-id="dtkrMlUMykxieMt0I9oAOP">华文行楷</b><span data-page-node-id="wSIjcMJtEYFQcC8EW1tsJ0">暖白字＋深棕描边，自适应缩放防溢出</span></div>
+        <div class="card reveal" data-page-node-id="oR4ni5q0KMRsWFuomFS95J"><i data-page-node-id="d8J2eLrICcU3XS3SFkMM8C">配乐</i><b data-page-node-id="GFo1UtzltWbCYemZ6qaKJP">D 宫五声 · 八段情绪线</b><span data-page-node-id="ChmQmh479AzLjosGMtdv5X">古琴／箫／琵琶／鼓／编钟＋风声，段间交叉淡化</span></div>
+      </div>
+
+      <div class="files reveal" data-page-node-id="nJTWyzUrQUaG2X47qzCPZb">
+        <h3 data-page-node-id="Z90Hhed9NQP6U8jiAv86ak">资料索引</h3>
+        <ul data-page-node-id="AVoFrEN60GgGFzj0jfUrX7">
+          <li data-page-node-id="PpfWFoty9FdzYNRERP8AfB"><code data-page-node-id="2DGfxOfZjtnsETHaReuzlw">脚本.md</code>　八段脚本与字幕</li>
+          <li data-page-node-id="7sPn56PeQHPgTSkFvxLdO7"><code data-page-node-id="Lt63fe8SMwvZPRtbliFtYc">生图描述.md</code>　30 帧画面与镜头描述</li>
+          <li data-page-node-id="rYQlVcmNffbBLm0vvtgtAc"><code data-page-node-id="ut5DpOa7v0BWE5sR7kPEZQ">视频提示词.md</code>　图生视频提示词与参数</li>
+          <li data-page-node-id="GQKVdJakQFzBB68mI90Lyb"><code data-page-node-id="7jIJdJR16upMbV4qKjQY4U">图片素材.html</code>　图片画廊（早期版本）</li>
+          <li data-page-node-id="1Ay90xdXmdVPlF9iJFFXkb"><code data-page-node-id="oHwbtkDm2K1ZzApH2hAu7D">视频素材/红楼梦_完整版_配乐版.mp4</code>　配乐版成片</li>
+          <li data-page-node-id="WW7PPnPsVzOheHTDL5Jv8F"><code data-page-node-id="izDaRhG8jSw7x90CeBDjBb">视频素材/红楼梦_完整版_带环境音.mp4</code>　环境音版成片</li>
+          <li data-page-node-id="HjLq1XxbFLbIhescyQSeGM"><code data-page-node-id="cha1wnHtnxSXNGDi73OO1C">视频素材/红楼梦_配乐.wav</code>　古风配乐音轨</li>
+          <li data-page-node-id="DWgmTAIQar9cHCiq8Mz6ah"><code data-page-node-id="EiFGOo6GrziMunrMxOSUfg">视频素材/_分段/</code>　八段分段视频</li>
+          <li data-page-node-id="neVIPKm9ouqrQw4wfYuopp"><code data-page-node-id="cDLX6VNCBlms84yFlBFzmR">视频素材/_原片/</code>　30 帧原片与带字幕帧</li>
+          <li data-page-node-id="lYC3RaYuGufRJxzaoDvZOW"><code data-page-node-id="nDNlIgfTOA8eKVdpN3zHQw">make_music.py</code>　配乐生成脚本</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-page-node-id="S9Ygj4J7bJH0VT5XuufKvw">
+  <div class="poems" data-page-node-id="z1kdB67AJQflMRtSnT7CA1">满纸荒唐言<i data-page-node-id="BLcZT90fW8hXBXs2MFE5hk">❖</i>一把辛酸泪<br data-page-node-id="7cUrr8VFDhN8xnr7HTON8z">都云作者痴<i data-page-node-id="GppVY1umjPlilsscRD01DQ">❖</i>谁解其中味</div>
+  <div class="cred" data-page-node-id="RY8S3SavYZDT4uorWzpsvs">《红楼梦》一分钟短片 · 作品展示页 · 二〇二六</div>
+</footer>
+
+<!-- 灯箱 -->
+<div id="lightbox" role="dialog" aria-modal="true" data-page-node-id="GVuGgzDhMI53cldGnXVKtB">
+  <button class="lb-btn" id="lbClose" title="关闭" data-page-node-id="Vda4fU8sIV7Se3dwgy8TFT">关闭</button>
+  <button class="lb-btn" id="lbPrev" title="上一帧" data-page-node-id="pI0uZ535nIKOCwQD1VdAhg">‹</button>
+  <img id="lbImg" src="" alt="" data-page-node-id="FTUzdne44F964md4UANvrp">
+  <div id="lbCap" data-page-node-id="B96Zdf1WUVizMbwpizRh7O"></div>
+  <div id="lbSub" data-page-node-id="Gc8NHdBRuWPNfRn4xquvW4"></div>
+  <button class="lb-btn" id="lbNext" title="下一帧" data-page-node-id="dwOIHKCyLkSDfeHy8hQmOS">›</button>
+</div>
+
+<script>
+  // 入场动画
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // 顶部进度条
+  var bar = document.getElementById('pbar');
+  addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    bar.style.width = (p*100) + '%';
+  }, {passive:true});
+
+  // 导航高亮
+  var links = document.querySelectorAll('#navlinks a');
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id); });
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  ['film','music','script','gallery','about'].forEach(function(id){
+    var s = document.getElementById(id); if(s) spy.observe(s);
+  });
+
+  // 灯箱
+  var items = Array.prototype.slice.call(document.querySelectorAll('.gal-item'));
+  var lb = document.getElementById('lightbox'),
+      lbImg = document.getElementById('lbImg'),
+      lbCap = document.getElementById('lbCap'),
+      lbSub = document.getElementById('lbSub'),
+      cur = 0;
+  function show(i){
+    cur = (i + items.length) % items.length;
+    var it = items[cur], img = it.querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    lbCap.textContent = it.dataset.seg + ' · ' + it.querySelector('b').textContent;
+    lbSub.textContent = it.querySelector('figcaption span').textContent;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function hide(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  items.forEach(function(it, i){ it.addEventListener('click', function(){ show(i); }); });
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); show(cur-1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); show(cur+1); });
+  document.getElementById('lbClose').addEventListener('click', hide);
+  lb.addEventListener('click', function(e){ if(e.target === lb) hide(); });
+  addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') hide();
+    if(e.key === 'ArrowLeft') show(cur-1);
+    if(e.key === 'ArrowRight') show(cur+1);
+  });
+</script>
+</body>
+</html>
